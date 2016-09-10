@@ -60,7 +60,7 @@ class TestFeedHistory:
 		assert new_history.add_seen_feed(entry, 'http://example.com') is False
 
 
-@pytest.has_internet
+@pytest.mark.usesfixture('internet')
 def test_format_entry():
 	site = 'https://github.com'
 	path = '/yougov/pmxbot/commits/master.atom'

@@ -32,7 +32,7 @@ setup_params = dict(
 	include_package_data=True,
 	namespace_packages=name.split('.')[:-1],
 	install_requires=[
-		'pmxbot',
+		'feedparser',
 	],
 	extras_require={
 	},
@@ -41,6 +41,7 @@ setup_params = dict(
 	] + pytest_runner + sphinx + wheel,
 	tests_require=[
 		'pytest>=2.8',
+		'jaraco.mongodb',
 	],
 	classifiers=[
 		"Development Status :: 5 - Production/Stable",
