@@ -3,7 +3,7 @@ language: python
 python:
 - 3.5
 script:
-- pip install -r tests/requirements.txt -r docs/requirements.txt .
+- pip install -r tests/requirements.txt .
 - py.test
 branches:
   except:
