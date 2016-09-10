@@ -5,6 +5,7 @@ import pytest
 from tests.functional import PmxbotHarness
 
 
+@pytest.mark.skip(reason="harness needs work")
 class TestPmxbotLog(PmxbotHarness):
 	def test_no_op(self):
 		"""
