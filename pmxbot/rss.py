@@ -10,8 +10,8 @@ import feedparser
 from jaraco import timing
 
 import pmxbot
-from . import core
-from . import storage
+from pmxbot import core
+from pmxbot import storage
 
 log = logging.getLogger(__name__)
 
