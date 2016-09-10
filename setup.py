@@ -17,21 +17,22 @@ sphinx = ['sphinx', 'rst.linker'] if needs_sphinx else []
 needs_wheel = {'release', 'bdist_wheel'}.intersection(sys.argv)
 wheel = ['wheel'] if needs_wheel else []
 
-name = 'skeleton'
-description = ''
+name = 'pmxbot.rss'
+description = 'RSS feed support for pmxbot'
 
 setup_params = dict(
 	name=name,
 	use_scm_version=True,
-	author="Jason R. Coombs",
-	author_email="jaraco@jaraco.com",
+	author="YouGov, Plc.",
+	author_email="opensource@yougov.com",
 	description=description or name,
 	long_description=long_description,
-	url="https://github.com/jaraco/" + name,
-	packages=setuptools.find_packages(),
+	url="https://github.com/yougov/" + name,
+	packages=['pmxbot'],
 	include_package_data=True,
 	namespace_packages=name.split('.')[:-1],
 	install_requires=[
+		'pmxbot',
 	],
 	extras_require={
 	},
@@ -45,7 +46,6 @@ setup_params = dict(
 		"Development Status :: 5 - Production/Stable",
 		"Intended Audience :: Developers",
 		"License :: OSI Approved :: MIT License",
-		"Programming Language :: Python :: 2.7",
 		"Programming Language :: Python :: 3",
 	],
 	entry_points={

@@ -1,4 +1,4 @@
-Welcome to skeleton documentation!
+Welcome to pmxbot.rss documentation!
 ========================================
 
 .. toctree::
@@ -7,7 +7,7 @@ Welcome to skeleton documentation!
    history
 
 
-.. automodule:: skeleton
+.. automodule:: pmxbot.rss
     :members:
     :undoc-members:
     :show-inheritance:
