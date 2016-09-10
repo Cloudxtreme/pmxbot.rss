@@ -50,6 +50,9 @@ setup_params = dict(
 		"Programming Language :: Python :: 3",
 	],
 	entry_points={
+		'pmxbot_handlers': [
+			'pmxbot feedparser = pmxbot.rss:RSSFeeds',
+		],
 	},
 )
 if __name__ == '__main__':
