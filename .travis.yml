@@ -16,5 +16,6 @@ deploy:
     all_branches: true
     python: 3.5
   user: jaraco
-  # supply password with `travis encrypt --add deploy.password`
   distributions: dists
+  password:
+    secure: bbEGljAKIoVHvCiuKPncAHXPiSNA4nd9HAKn4RuCn0c9SymWUVeDm3K7QpWCmWzaCCHeYRMy33WXJZgqxzf8GxEUqcdiWv/DMZEENHPpIDPBmUxbuAUWcknQAGekeHIRGg0aGOjPy7QfF30+kvBjhRMgNFXL3i2y9J6FVtEAwk8sYkHMljAcUJ9Aeyr9BZ3Uxx7EBPkFuPf//WPVbVsnLxfXxOqnEkB5i+anGF3As9rNr4wX+QJ34pd+rdtE8S21E3T3GCB/lCBB3078Jg2LwZ44YBzNbSfTWDZertgObX1VifmC1AjgoXobGK70goPbZa/F2zgAxlHY6eWeaS2Iab+T319ymKdMOX3tKLVsbWQ7gQdtknrkjFH/YsqKGcnX6RtPtXDVytEOYIYFQFyC/8NAYDNBPrxluvdVONTNjNIhso1LDtkvR7Fbwb+sLJpE6yYiquduWlI2m3jBOK8MJilMQYynYXRxCW1lR6KVIr+aLJeoZtB6xl7RhyvYx69q9w0btyguC5A0273levg6bSHzOcRV98hNSb/wHM2jtOj+azCa84BEKiIpn/XJ5zUBxaJvb2MJ+Ksg/dYRWkN3F2vYYy/zZowmIMtKmxsj4MiXakGusC/gsXxDEZcGjapldrzIQM1aC4W+8UqkWRe5+yamPXV+QGaKylPL9X2E2tc=
