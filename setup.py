@@ -3,24 +3,16 @@
 # Project skeleton maintained at https://github.com/jaraco/skeleton
 
 import io
-import sys
 
 import setuptools
 
 with io.open('README.rst', encoding='utf-8') as readme:
 	long_description = readme.read()
 
-needs_pytest = {'pytest', 'test'}.intersection(sys.argv)
-pytest_runner = ['pytest_runner'] if needs_pytest else []
-needs_sphinx = {'release', 'build_sphinx', 'upload_docs'}.intersection(sys.argv)
-sphinx = ['sphinx', 'rst.linker'] if needs_sphinx else []
-needs_wheel = {'release', 'bdist_wheel'}.intersection(sys.argv)
-wheel = ['wheel'] if needs_wheel else []
-
 name = 'pmxbot.rss'
 description = 'RSS feed support for pmxbot'
 
-setup_params = dict(
+params = dict(
 	name=name,
 	use_scm_version=True,
 	author="YouGov, Plc.",
@@ -38,8 +30,8 @@ setup_params = dict(
 	extras_require={
 	},
 	setup_requires=[
-		'setuptools_scm>=1.9',
-	] + pytest_runner + sphinx + wheel,
+		'setuptools_scm>=1.15.0',
+	],
 	classifiers=[
 		"Development Status :: 5 - Production/Stable",
 		"Intended Audience :: Developers",
@@ -53,4 +45,4 @@ setup_params = dict(
 	},
 )
 if __name__ == '__main__':
-	setuptools.setup(**setup_params)
+	setuptools.setup(**params)

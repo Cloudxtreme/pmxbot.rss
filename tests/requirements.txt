@@ -1,3 +1,3 @@
--r ../docs/requirements.txt
-pytest>=2.8
+pytest >= 2.8
+subprocess32; python_version=="2.6"
 jaraco.mongodb
