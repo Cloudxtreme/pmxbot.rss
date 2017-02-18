@@ -5,6 +5,7 @@ import socket
 import re
 import datetime
 import logging
+import functools
 
 import feedparser
 from jaraco import timing
@@ -88,13 +89,13 @@ class RSSFeeds(FeedHistory):
 		self.feed_interval = pmxbot.config.get('feed_interval', 15)
 		self.feeds = pmxbot.config.get('feeds', [])
 		for feed in self.feeds:
+			parse = functools.partial(self.parse_feed, feed=feed)
 			core.execdelay(
 				name='feedparser',
 				channel=feed['channel'],
 				howlong=datetime.timedelta(minutes=self.feed_interval),
-				args=[feed],
 				repeat=True,
-			)(self.parse_feed)
+			)(parse)
 
 	def parse_feed(self, client, event, feed):
 		"""
