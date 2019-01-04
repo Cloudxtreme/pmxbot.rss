@@ -166,11 +166,11 @@ class MongoDBFeedparserDB(FeedparserDB, storage.MongoDBStorage):
 
 	def add_entries(self, entries):
 		for entry in entries:
-			self.db.insert(dict(key=entry))
+			self.db.insert_one(dict(key=entry))
 
 	def import_(self, item):
 		self.add_entries([item])
 
 	def clear(self):
 		"Clear all entries"
-		self.db.remove()
+		self.db.delete_many({})
