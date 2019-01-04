@@ -2,6 +2,7 @@ import urllib.request
 
 import pytest
 
+
 @pytest.fixture(scope='session')
 def internet():
 	try:
@@ -13,5 +14,5 @@ def internet():
 @pytest.fixture(params=['mongodb', 'sqlite'])
 def db_uri(request):
 	if request.param == 'mongodb':
-		return request.getfuncargvalue('mongodb_uri')
+		return request.getfixturevalue('mongodb_uri')
 	return 'sqlite:pmxbot.sqlite'
