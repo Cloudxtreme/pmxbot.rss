@@ -105,7 +105,7 @@ class RSSFeeds(FeedHistory):
 		socket.setdefaulttimeout(20)
 		try:
 			resp = feedparser.parse(feed['url'])
-		except:
+		except Exception:
 			log.exception("Error retrieving feed %s", feed['url'])
 
 		outputs = [
@@ -117,7 +117,8 @@ class RSSFeeds(FeedHistory):
 		if not outputs:
 			return
 
-		txt = 'News from %s %s : %s' % (feed['name'], feed['linkurl'], ' || '.join(outputs[:10]))
+		txt = f'News from {feed["name"]} {feed["linkurl"]} : ' + \
+			' || '.join(outputs[:10])
 		yield core.NoLog
 		yield txt
 
@@ -138,14 +139,16 @@ class FeedparserDB(storage.SelectableStorage):
 class SQLiteFeedparserDB(FeedparserDB, storage.SQLiteStorage):
 	def init_tables(self):
 		self.db.execute("CREATE TABLE IF NOT EXISTS feed_seen (key varchar)")
-		self.db.execute('CREATE INDEX IF NOT EXISTS ix_feed_seen_key ON feed_seen (key)')
+		self.db.execute(
+			'CREATE INDEX IF NOT EXISTS ix_feed_seen_key ON feed_seen (key)')
 		self.db.commit()
 
 	def get_seen_feeds(self):
 		return [row[0] for row in self.db.execute('select key from feed_seen')]
 
 	def add_entries(self, entries):
-		self.db.executemany('INSERT INTO feed_seen (key) values (?)', [(x,) for x in entries])
+		self.db.executemany(
+			'INSERT INTO feed_seen (key) values (?)', [(x,) for x in entries])
 		self.db.commit()
 
 	def clear(self):
