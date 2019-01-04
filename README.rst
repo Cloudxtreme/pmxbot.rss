@@ -3,15 +3,11 @@
 
 .. image:: https://img.shields.io/pypi/pyversions/pmxbot.rss.svg
 
-.. image:: https://img.shields.io/pypi/dm/pmxbot.rss.svg
-
 .. image:: https://img.shields.io/travis/yougov/pmxbot.rss/master.svg
-   :target: http://travis-ci.org/yougov/pmxbot.rss
+   :target: https://travis-ci.org/yougov/pmxbot.rss
 
+.. .. image:: https://img.shields.io/appveyor/ci/yougov/pmxbot-rss/master.svg
+..    :target: https://ci.appveyor.com/project/yougov/pmxbot-rss/branch/master
 
-License
-=======
-
-License is indicated in the project metadata (typically one or more
-of the Trove classifiers). For more details, see `this explanation
-<https://github.com/jaraco/skeleton/issues/1>`_.
+.. .. image:: https://readthedocs.org/projects/pmxbotrss/badge/?version=latest
+..    :target: https://pmxbotrss.readthedocs.io/en/latest/?badge=latest

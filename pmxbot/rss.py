@@ -8,7 +8,7 @@ import logging
 import functools
 
 import feedparser
-from jaraco import timing
+from tempora import timing
 
 import pmxbot
 from pmxbot import core
