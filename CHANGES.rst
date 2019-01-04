@@ -1,3 +1,8 @@
+1.0.2
+=====
+
+Refreshed package metadata. Cleaned up deprecation warnings.
+
 1.0.1
 =====
 
